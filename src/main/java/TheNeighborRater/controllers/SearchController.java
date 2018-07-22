@@ -7,15 +7,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-@RequestMapping("home")
-public class HomeController {
+@RequestMapping("search")
+public class SearchController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String displayHome(Model model){
+    public String displaySearchForm(Model model){
 
         model.addAttribute("title", "Search");
 
-        return ("home/index");
+        return "search/index";
+    }
+
+    @RequestMapping(value = "results", method = RequestMethod.GET)
+    public String displaySearchResults(Model model){
+
+        model.addAttribute("title", "Search");
+
+        return "search/results";
     }
 
 }
