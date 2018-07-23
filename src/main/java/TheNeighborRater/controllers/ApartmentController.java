@@ -18,6 +18,15 @@ public class ApartmentController {
     @Autowired
     private ApartmentDao apartmentDao;
 
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public String index(Model model){
+
+        model.addAttribute("title", "Home");
+        model.addAttribute("apartments", apartmentDao.findAll());
+
+        return "apartment/display";
+    }
+
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddForm(Model model){
 
@@ -42,7 +51,8 @@ public class ApartmentController {
 
         model.addAttribute("title", "Add");
 
-        return "apartment/results";
+
+        return "redirect:";
     }
 
 }

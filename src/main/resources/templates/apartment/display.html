@@ -7,6 +7,10 @@
 </head>
 <body>
 
+<div th:each="apartment : ${apartments}">
+<p th:text="${apartment.name}" ></p>
+<p th:text="${apartment.address}" ></p>
+</div>
 
 </body>
 </html>
