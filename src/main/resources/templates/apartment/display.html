@@ -2,15 +2,79 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
 
-    <div th:replace="fragments :: head"></div>
+    <title th:text="${title}"></title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/display.css}" />
 
 </head>
 <body>
 
-<div th:each="apartment : ${apartments}">
-<p th:text="${apartment.name}" ></p>
-<p th:text="${apartment.address}" ></p>
+<!--<div th:each="apartment : ${apartments}">-->
+<!--<p th:text="${apartment.name}" ></p>-->
+<!--<p th:text="${apartment.address}" ></p>-->
+<!--</div>-->
+<div class="container">
+    <div class="row">
+        <div class="table-responsive table-bordered movie-table">
+            <table class="table movie-table">
+                <thead>
+                <tr class= "movie-table-head">
+                    <th>Apartment Name</th>
+                    <th class="address">Address</th>
+                    <th>Rating</th>
+                    <th>Review</th>
+                    <th>Noise Level</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <!--row-->
+                <tr th:each="apartment,idx : ${apartments}" class= "" th:classappend="${idx.index % 2 == 0} ? dark-row : light-row">
+                    <td th:text="${apartment.name}"></td>
+                    <td class="address" th:text="${apartment.address}"> <span style="color:green;">5</span> </td>
+                    <td>40</td>
+                    <td></td>
+                    <td>50</td>
+                </tr>
+                <!--/.row-->
+
+                <!--row-->
+                <!--<tr class="light-row">-->
+                    <!--<td>The Shining</td>-->
+                    <!--<td> <span style="color:green;">5</span> /5 </td>-->
+                    <!--<td>37</td>-->
+                    <!--<td>Both</td>-->
+                <!--</tr>-->
+                <!--&lt;!&ndash;/.row&ndash;&gt;-->
+
+                <!--&lt;!&ndash;row&ndash;&gt;-->
+                <!--<tr class = "dark-row">-->
+                    <!--<td>Rubber</td>-->
+                    <!--<td> <span style="color:red;">1</span> /5 </td>-->
+                    <!--<td>20</td>-->
+                    <!--<td>Rental</td>-->
+                <!--</tr>-->
+                <!--&lt;!&ndash;/.row&ndash;&gt;-->
+
+                <!--&lt;!&ndash;row&ndash;&gt;-->
+                <!--<tr class="light-row">-->
+                    <!--<td>The Hangover</td>-->
+                    <!--<td> <span style="color:orange;">3</span> /5 </td>-->
+                    <!--<td>33</td>-->
+                    <!--<td>Sale</td>-->
+                <!--</tr>-->
+                <!--&lt;!&ndash;/.row&ndash;&gt;-->
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+
 
 </body>
 </html>
