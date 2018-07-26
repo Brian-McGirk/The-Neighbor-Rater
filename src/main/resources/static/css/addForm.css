@@ -40,3 +40,32 @@ body {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
+
+.label-rating{
+    position: relative;
+    right: 10px;
+}
+
+.radio-inline{
+    position: relative;
+    left: 9px;
+}
+
+.noise{
+    position: absolute;
+    left: 15px;
+}
+
+.wall{
+    position: absolute;
+    left: 15px;
+}
+
+.overall{
+    position: absolute;
+    left: 15px;
+}
+
+.submit-button{
+    margin-top: 50px;
+}

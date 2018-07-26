@@ -52,7 +52,7 @@ public class ApartmentController {
         model.addAttribute("title", "Add");
 
 
-        return "redirect:";
+        return "redirect:/review";
     }
 
 }

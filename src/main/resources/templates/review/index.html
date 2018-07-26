@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+
+    <div th:replace="fragments :: head"></div>
+    <link rel="stylesheet" th:href="@{/css/addForm.css}" />
+
+</head>
+<body>
+
+<h3 class="well-title">How do you rate it?</h3>
+
+<div class="well-searchbox">
+    <form class="form-horizontal" role="form" method="post" action="/review/add" th:object="${review}">
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Review</label>
+            <div class="col-md-8">
+                <textarea th:field="*{review}" class="form-control" placeholder="Review"></textarea>
+            </div>
+        </div>
+
+
+
+
+        <label class="col-md-4 control-label label-rating"><span class="noise">Noise Rating</span></label>
+
+        <div class="radio-inline">
+            <label><input type="radio" name="noiseRating" th:value="1">1</label>
+        </div>
+
+        <div class="radio-inline">
+            <label><input type="radio" name="noiseRating" th:value="2">2</label>
+        </div>
+
+        <div class="radio-inline">
+            <label><input type="radio" name="noiseRating" th:value="3">3</label>
+        </div>
+
+        <div class="radio-inline">
+            <label><input type="radio" name="noiseRating" th:value="4">4</label>
+        </div>
+
+        <div class="radio-inline">
+            <label><input type="radio" name="noiseRating" th:value="5">5</label>
+        </div>
+
+        <br/>
+
+
+        <label class="col-md-4 control-label label-rating"><span class="wall">Wall Thickness</span></label>
+
+        <div class="radio-inline">
+            <label><input type="radio" name="wallThicknessRating" th:value="1">1</label>
+        </div>
+
+        <div class="radio-inline">
+            <label><input type="radio" name="wallThicknessRating" th:value="2">2</label>
+        </div>
+
+        <div class="radio-inline">
+            <label><input type="radio" name="wallThicknessRating" th:value="3">3</label>
+        </div>
+
+        <div class="radio-inline">
+            <label><input type="radio" name="wallThicknessRating" th:value="4">4</label>
+        </div>
+
+        <div class="radio-inline">
+            <label><input type="radio" name="wallThicknessRating" th:value="5">5</label>
+        </div>
+
+<br/>
+        <label class="col-md-4 control-label label-rating"><span class="overall">Overall Rating</span></label>
+
+        <div class="radio-inline">
+            <label><input type="radio" th:field="*{rating}" th:value="1">1</label>
+        </div>
+        <div class="radio-inline">
+            <label><input type="radio" th:field="*{rating}" th:value="2">2</label>
+        </div>
+        <div class="radio-inline">
+            <label><input type="radio" th:field="*{rating}" th:value="3">3</label>
+        </div>
+        <div class="radio-inline">
+            <label><input type="radio" th:field="*{rating}" th:value="4">4</label>
+        </div>
+        <div class="radio-inline">
+            <label><input type="radio" th:field="*{rating}" th:value="5">5</label>
+        </div>
+
+        <div class="col-sm-offset-4 col-sm-5">
+            <button type="submit" class="btn btn-success submit-button">Save</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
