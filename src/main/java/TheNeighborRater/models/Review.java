@@ -1,8 +1,8 @@
 package TheNeighborRater.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -14,11 +14,17 @@ public class Review {
 
     private String review;
 
-    private int rating;
+    private int overallRating;
 
     private int noiseRating;
 
     private int wallThicknessRating;
+
+    private int averageRating;
+
+    @OneToMany
+    @JoinColumn(name = "review_id")
+    private List<Apartment> apartments = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -32,11 +38,39 @@ public class Review {
         this.review = review;
     }
 
-    public int getRating() {
-        return rating;
+    public int getOverallRating() {
+        return overallRating;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
+    public void setOverallRating(int overallRating) {
+        this.overallRating = overallRating;
+    }
+
+    public int getNoiseRating() {
+        return noiseRating;
+    }
+
+    public void setNoiseRating(int noiseRating) {
+        this.noiseRating = noiseRating;
+    }
+
+    public int getWallThicknessRating() {
+        return wallThicknessRating;
+    }
+
+    public void setWallThicknessRating(int wallThicknessRating) {
+        this.wallThicknessRating = wallThicknessRating;
+    }
+
+    public int getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(int averageRating) {
+        this.averageRating = averageRating;
+    }
+
+    public List<Apartment> getApartments() {
+        return apartments;
     }
 }

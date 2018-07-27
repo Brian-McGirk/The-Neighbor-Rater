@@ -3,6 +3,7 @@ package TheNeighborRater.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -29,6 +30,9 @@ public class Apartment {
 
     @NotNull
     private String country;
+
+    @ManyToOne
+    private Review review;
 
     public int getId() {
         return id;
@@ -80,5 +84,9 @@ public class Apartment {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public Review getReview() {
+        return review;
     }
 }
