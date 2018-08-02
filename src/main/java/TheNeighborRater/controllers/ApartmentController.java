@@ -9,6 +9,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -37,7 +38,8 @@ public class ApartmentController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String processAddForm(Model model, @ModelAttribute Apartment apartment, Errors errors){
+    public String processAddForm(Model model, @ModelAttribute Apartment apartment, Errors errors,
+                                 RedirectAttributes redirectAttributes){
 
         if(errors.hasErrors()){
 
@@ -50,7 +52,7 @@ public class ApartmentController {
         apartmentDao.save(apartment);
 
         model.addAttribute("title", "Add");
-
+        redirectAttributes.addAttribute("apartmentId", apartment.getId());
 
         return "redirect:/review";
     }

@@ -11,12 +11,12 @@
 <h3 class="well-title">How do you rate it?</h3>
 
 <div class="well-searchbox">
-    <form class="form-horizontal" role="form" method="post" action="/review/add" th:object="${review}">
+    <form class="form-horizontal" role="form" th:object="${review}" method="post" action="/review/add">
 
         <div class="form-group">
             <label class="col-md-4 control-label">Review</label>
             <div class="col-md-8">
-                <textarea th:field="*{review}" class="form-control" placeholder="Review"></textarea>
+                <textarea th:field="" class="form-control" placeholder="Review"></textarea>
             </div>
         </div>
 
@@ -26,23 +26,23 @@
         <label class="col-md-4 control-label label-rating"><span class="noise">Noise Rating</span></label>
 
         <div class="radio-inline">
-            <label><input type="radio" name="noiseRating" th:value="1">1</label>
+            <label><input type="radio" name="noiseRating" value="1">1</label>
         </div>
 
         <div class="radio-inline">
-            <label><input type="radio" name="noiseRating" th:value="2">2</label>
+            <label><input type="radio" name="noiseRating" value="2">2</label>
         </div>
 
         <div class="radio-inline">
-            <label><input type="radio" name="noiseRating" th:value="3">3</label>
+            <label><input type="radio" name="noiseRating" value="3">3</label>
         </div>
 
         <div class="radio-inline">
-            <label><input type="radio" name="noiseRating" th:value="4">4</label>
+            <label><input type="radio" name="noiseRating" value="4">4</label>
         </div>
 
         <div class="radio-inline">
-            <label><input type="radio" name="noiseRating" th:value="5">5</label>
+            <label><input type="radio" name="noiseRating" value="5">5</label>
         </div>
 
         <br/>
@@ -51,42 +51,42 @@
         <label class="col-md-4 control-label label-rating"><span class="wall">Wall Thickness</span></label>
 
         <div class="radio-inline">
-            <label><input type="radio" name="wallThicknessRating" th:value="1">1</label>
+            <label><input type="radio" name="wallThicknessRating" value="1">1</label>
         </div>
 
         <div class="radio-inline">
-            <label><input type="radio" name="wallThicknessRating" th:value="2">2</label>
+            <label><input type="radio" name="wallThicknessRating" value="2">2</label>
         </div>
 
         <div class="radio-inline">
-            <label><input type="radio" name="wallThicknessRating" th:value="3">3</label>
+            <label><input type="radio" name="wallThicknessRating" value="3">3</label>
         </div>
 
         <div class="radio-inline">
-            <label><input type="radio" name="wallThicknessRating" th:value="4">4</label>
+            <label><input type="radio" name="wallThicknessRating" value="4">4</label>
         </div>
 
         <div class="radio-inline">
-            <label><input type="radio" name="wallThicknessRating" th:value="5">5</label>
+            <label><input type="radio" name="wallThicknessRating" value="5">5</label>
         </div>
 
 <br/>
         <label class="col-md-4 control-label label-rating"><span class="overall">Overall Rating</span></label>
 
         <div class="radio-inline">
-            <label><input type="radio" name="overallRating" th:value="1">1</label>
+            <label><input type="radio" name="overallRating" value="1">1</label>
         </div>
         <div class="radio-inline">
-            <label><input type="radio" name="overallRating" th:value="2">2</label>
+            <label><input type="radio" name="overallRating" value="2">2</label>
         </div>
         <div class="radio-inline">
-            <label><input type="radio" name="overallRating" th:value="3">3</label>
+            <label><input type="radio" name="overallRating" value="3">3</label>
         </div>
         <div class="radio-inline">
-            <label><input type="radio" name="overallRating" th:value="4">4</label>
+            <label><input type="radio" name="overallRating" value="4">4</label>
         </div>
         <div class="radio-inline">
-            <label><input type="radio" name="overallRating" th:value="5">5</label>
+            <label><input type="radio" name="overallRating" value="5">5</label>
         </div>
 
         <div class="col-sm-offset-4 col-sm-5">
