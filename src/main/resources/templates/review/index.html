@@ -89,7 +89,8 @@
             <!--<label><input type="radio" name="overallRating" value="5">5</label>-->
         <!--</div>-->
 
-        <!--<input type="hidden" name="apartment" th:value="${apartmentId}"/>-->
+        <!--<input type="hidden" name="apartmentId" th:value="*{apartmentId}"/>-->
+        <input type="hidden" th:field="*{apartmentId}"/>
 
         <div class="col-sm-offset-4 col-sm-5">
             <button type="submit" class="btn btn-success submit-button">Save</button>

@@ -14,13 +14,13 @@ public class Review {
 
     private String reviewDescription;
 
-    private int overallRating;
-
-    private int noiseRating;
-
-    private int wallThicknessRating;
-
-    private int averageRating;
+//    private int overallRating;
+//
+//    private int noiseRating;
+//
+//    private int wallThicknessRating;
+//
+//    private int averageRating;
 
     @ManyToOne
     private Apartment apartment;
@@ -40,36 +40,43 @@ public class Review {
         this.reviewDescription = reviewDescription;
     }
 
-    public int getOverallRating() {
-        return overallRating;
+//    public int getOverallRating() {
+//        return overallRating;
+//    }
+//
+//    public void setOverallRating(int overallRating) {
+//        this.overallRating = overallRating;
+//    }
+//
+//    public int getNoiseRating() {
+//        return noiseRating;
+//    }
+//
+//    public void setNoiseRating(int noiseRating) {
+//        this.noiseRating = noiseRating;
+//    }
+//
+//    public int getWallThicknessRating() {
+//        return wallThicknessRating;
+//    }
+//
+//    public void setWallThicknessRating(int wallThicknessRating) {
+//        this.wallThicknessRating = wallThicknessRating;
+//    }
+//
+//    public int getAverageRating() {
+//        return averageRating;
+//    }
+//
+//    public void setAverageRating(int averageRating) {
+//        this.averageRating = averageRating;
+//    }
+
+    public Apartment getApartment() {
+        return apartment;
     }
 
-    public void setOverallRating(int overallRating) {
-        this.overallRating = overallRating;
+    public void setApartment(Apartment apartment) {
+        this.apartment = apartment;
     }
-
-    public int getNoiseRating() {
-        return noiseRating;
-    }
-
-    public void setNoiseRating(int noiseRating) {
-        this.noiseRating = noiseRating;
-    }
-
-    public int getWallThicknessRating() {
-        return wallThicknessRating;
-    }
-
-    public void setWallThicknessRating(int wallThicknessRating) {
-        this.wallThicknessRating = wallThicknessRating;
-    }
-
-    public int getAverageRating() {
-        return averageRating;
-    }
-
-    public void setAverageRating(int averageRating) {
-        this.averageRating = averageRating;
-    }
-
 }

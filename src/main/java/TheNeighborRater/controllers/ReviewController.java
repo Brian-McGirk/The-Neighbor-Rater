@@ -51,7 +51,8 @@ public class ReviewController {
 
         Review review = form.getReview();
 
-        apartmentDao.save(apartment);
+        review.setApartment(apartment);
+        reviewDao.save(review);
 
 
 
