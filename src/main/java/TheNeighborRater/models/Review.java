@@ -12,7 +12,7 @@ public class Review {
     @GeneratedValue
     private int id;
 
-    private String review;
+    private String reviewDescription;
 
     private int overallRating;
 
@@ -22,20 +22,22 @@ public class Review {
 
     private int averageRating;
 
-    @OneToMany
-    @JoinColumn(name = "review_id")
-    private List<Apartment> apartments = new ArrayList<>();
+    @ManyToOne
+    private Apartment apartment;
+
+    public Review() {
+    }
 
     public int getId() {
         return id;
     }
 
-    public String getReview() {
-        return review;
+    public String getReviewDescription() {
+        return reviewDescription;
     }
 
-    public void setReview(String review) {
-        this.review = review;
+    public void setReviewDescription(String reviewDescription) {
+        this.reviewDescription = reviewDescription;
     }
 
     public int getOverallRating() {
@@ -70,7 +72,4 @@ public class Review {
         this.averageRating = averageRating;
     }
 
-    public List<Apartment> getApartments() {
-        return apartments;
-    }
 }

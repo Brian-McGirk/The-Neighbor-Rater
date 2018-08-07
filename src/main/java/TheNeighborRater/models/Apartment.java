@@ -1,10 +1,9 @@
 package TheNeighborRater.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Apartment {
@@ -31,8 +30,12 @@ public class Apartment {
     @NotNull
     private String country;
 
-    @ManyToOne
-    private Review review;
+    @OneToMany
+    @JoinColumn(name = "apartment_id")
+    private List<Review> reviews = new ArrayList<>();
+
+    public Apartment() {
+    }
 
     public int getId() {
         return id;
@@ -86,7 +89,5 @@ public class Apartment {
         this.country = country;
     }
 
-    public Review getReview() {
-        return review;
-    }
+
 }

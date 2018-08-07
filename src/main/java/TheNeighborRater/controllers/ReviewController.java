@@ -4,11 +4,13 @@ import TheNeighborRater.models.Apartment;
 import TheNeighborRater.models.Review;
 import TheNeighborRater.models.data.ApartmentDao;
 import TheNeighborRater.models.data.ReviewDao;
+import TheNeighborRater.models.forms.AddReviewForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.Optional;
 
@@ -25,15 +27,9 @@ public class ReviewController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String displayReviewForm(Model model, @RequestParam int apartmentId){
 
-        Optional<Apartment> apartmentOptional = apartmentDao.findById(apartmentId);
-        Apartment apartment = apartmentOptional.get();
-
-        Review review = new Review();
-
-
 
         model.addAttribute("title", "Review");
-        model.addAttribute("review", review);
+        model.addAttribute("form", new AddReviewForm(new Review(), apartmentId));
 
 
 
@@ -41,7 +37,7 @@ public class ReviewController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String processReviewForm(Model model, @ModelAttribute Review review, Errors errors){
+    public String processReviewForm(Model model, @ModelAttribute AddReviewForm form, Errors errors){
 
         if(errors.hasErrors()){
 
@@ -50,9 +46,14 @@ public class ReviewController {
             return "review/index";
         }
 
+        Optional<Apartment> apartmentOptional = apartmentDao.findById(form.getApartmentId());
+        Apartment apartment = apartmentOptional.get();
+
+        Review review = form.getReview();
+
+        apartmentDao.save(apartment);
 
 
-        reviewDao.save(review);
 
         return "redirect:/apartment";
     }
